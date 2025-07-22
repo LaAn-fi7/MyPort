@@ -37,22 +37,27 @@
     </section>
 
     <section id="certificates">
-      <h2>🎓 Sertifikat & Badge</h2>
-      <div class="grid">
-        <div class="card cert">
-          <img src="images/cert-python.png" alt="Sertifikat Python" />
-          <p>Dicoding Python</p>
-        </div>
-        <div class="card cert">
-          <img src="images/badge-credly.png" alt="Badge Credly" />
-          <p>Credly: IT Support</p>
-        </div>
-      </div>
+     <h2>🎓 Sertifikat & Badge</h2>
+      <div class="grid cert-grid" id="cert-container"></div>
     </section>
+
+    <script src="certificates.js"></script>
+     <script>
+      const container = document.getElementById('cert-container');
+      certificates.forEach(cert => {
+      const card = document.createElement('div');
+      card.className = 'card cert';
+      card.innerHTML = `
+       <img src="images/certificates/${cert.file}" alt="${cert.title}" />
+       <p>${cert.title}</p>
+       `;
+     container.appendChild(card);
+    });
+   </script>
 
     <section id="contact">
       <h2>📬 Kontak</h2>
-      <p>Email: <a href="mailto:la.anfi7@email.com">la.anfi7@email.com</a></p>
+      <p>Email: <a href="mailto:latifannafi650@gmail.com">latifannafi650@gmail.com</a></p>
       <p>LinkedIn: <a href="#">linkedin.com/in/laanfi7</a></p>
     </section>
   </main>
