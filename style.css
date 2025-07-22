@@ -1,7 +1,7 @@
 /* Font dan warna ala GitHub */
 body {
   margin: 0;
-  font-family: 'Fira Code', monospaced;
+  font-family: 'Fira Code', monospace;
   background-color: #0d1117;
   color: #c9d1d9;
 }
