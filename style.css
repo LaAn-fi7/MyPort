@@ -1,1 +1,75 @@
-css
+/* Font dan warna ala GitHub */
+body {
+  margin: 0;
+  font-family: Consolas, 'Courier New', monospace;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #161b22;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+nav h1 {
+  color: #58a6ff;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.intro h2 {
+  color: #58a6ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.cert img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #58a6ff;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #8b949e;
+  border-top: 1px solid #21262d;
+  margin-top: 3rem;
+}
