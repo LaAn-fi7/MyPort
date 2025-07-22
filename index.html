@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LaAnfi7 • Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --card-bg: #f9f9f9;
+      --accent: #0d99ff;
+      --radius: 16px;
+    }
+
+    body.dark {
+      --bg: #0e0e0e;
+      --text: #eeeeee;
+      --card-bg: #1a1a1a;
+      --accent: #66ccff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: var(--card-bg);
+      border-bottom: 1px solid #ccc;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      background: none;
+      border: 2px solid var(--text);
+      color: var(--text);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .cert-badge-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleMode()">🌓 Mode</button>
+
+  <header>
+    <h1>Latif Annafi</h1>
+    <p>Programmer • 3D Artis • Editor</p>
+  </header>
+
+  <main class="container">
+    <section id="skills">
+      <h2>💼 Keahlian</h2>
+      <div class="grid skills-grid">
+        <div class="card">
+          <h3>👨‍💻 Programmer</h3>
+          <p>Ngoding tiap hari, bikin aplikasi atau web jalan mulus. Temannya error, hobinya ngulik.</p>
+        </div>
+        <div class="card">
+          <h3>🎨 3D Artist</h3>
+          <p>Bikin gambar 3D yang bisa diputar-putar. Entah itu karakter, benda, atau dunia virtual—semua dibuat dari nol.</p>
+        </div>
+        <div class="card">
+          <h3>🎬 Editor</h3>
+          <p>Potong sana-sini, kasih musik, efek, dan warna. Biar video jadi enak ditonton dan punya cerita.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <h2>🎓 Sertifikat</h2>
+      <div class="grid cert-badge-grid" id="cert-container"></div>
+    </section>
+
+    <script src="certificates.js"></script>
+    <script>
+      const certContainer = document.getElementById('cert-container');
+      certificates.forEach((cert, i) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="images/certificates/${cert.file}" alt="${cert.title}" />
+          <p>${cert.title}</p>
+        `;
+        certContainer.appendChild(card);
+      });
+    </script>
+
+    <section id="badges">
+      <h2>🎖️ Badge</h2>
+      <div class="grid cert-badge-grid" id="badg-container"></div>
+    </section>
+
+    <script src="badges.js"></script>
+    <script>
+      const badgContainer = document.getElementById('badg-container');
+      badges.forEach((badg, i) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="images/badges/${badg.file}" alt="${badg.title}" />
+          <p>${badg.title}</p>
+        `;
+        badgContainer.appendChild(card);
+      });
+    </script>
+
+    <section id="contact">
+      <h2>📬 Kontak</h2>
+      <p>Email: <a href="mailto:latifannafi650@gmail.com">latifannafi650@gmail.com</a></p>
+      <p>Github: <a href="https://github.com/LaAn-fi7">LaAn-fi7</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 • LaAnfi7</p>
+  </footer>
+
+  <script>
+    function setMode(mode) {
+      document.body.classList.toggle('dark', mode === 'dark');
+      localStorage.setItem('theme', mode);
+    }
+
+    function toggleMode() {
+      const isDark = document.body.classList.contains('dark');
+      setMode(isDark ? 'light' : 'dark');
+    }
+
+    (function () {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        setMode(saved);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setMode(prefersDark ? 'dark' : 'light');
+      }
+    })();
+  </script>
+</body>
+</html>
